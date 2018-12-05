@@ -13,8 +13,8 @@ router.route('/places')
 router.route('/places/:id')
   .delete(placesController.deleteRoute);
 
-router.route('/places/:id')
-  .post(placesController.updateRoute);
+router.route('/places/:id/edit')
+  .put(placesController.updateRoute);
 
 
 module.exports = router;

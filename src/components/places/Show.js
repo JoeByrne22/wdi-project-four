@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 
 export default class PlaceShow extends React.Component {
   constructor(props) {
@@ -23,6 +25,9 @@ export default class PlaceShow extends React.Component {
   }
 
 
+
+  // turn edit into a link to edit component
+
   render() {
     const { place } = this.state;
     console.log('this is place', place);
@@ -38,6 +43,7 @@ export default class PlaceShow extends React.Component {
           :
           <p>Please wait...</p>}
         <button onClick={this.handleDelete}>DELETE</button>
+        <Link to={`/places/${this.state.place._id}/edit`}><button>EDIT</button></Link>
       </section>
     );
   }
