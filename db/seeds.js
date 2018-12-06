@@ -1,8 +1,16 @@
 const mongoose = require('mongoose');
 const env = require('../config/environment');
 const Place = require('../models/place');
+const User = require('../models/user');
 
 mongoose.connect(env.dbURI);
+
+const userData = [{
+  username: 'Dave',
+  email: 'dave@dave.com',
+  password: 'pass'
+  // passwordConfirmation: 'pass'
+}];
 
 const placeData = [
   {
@@ -19,13 +27,19 @@ const placeData = [
     closingHour: 19.00,
     postcode: 'SW11 6HW'
   }
-
 ];
+
+
 
 Place.collection.drop();
 
 Place.create(placeData)
   .then(places => {
     console.log(`Created ${places.length} places`);
+    mongoose.connection.close();
+  });
+User.create(userData)
+  .then(user => {
+    console.log(`Created ${user.length} users!`);
     mongoose.connection.close();
   });
