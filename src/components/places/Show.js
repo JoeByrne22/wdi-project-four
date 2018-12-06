@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import {authorizationHeader} from '../../lib/auth';
 import { Link } from 'react-router-dom';
 
 
@@ -20,7 +21,7 @@ export default class PlaceShow extends React.Component {
 
   handleDelete() {
     console.log('this.state.place._id is ', this.state.place._id);
-    axios.delete(`/api/places/${this.state.place._id}`)
+    axios.delete(`/api/places/${this.state.place._id}`, authorizationHeader())
       .then(() => this.props.history.push('/places/'));
   }
 

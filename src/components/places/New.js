@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import {authorizationHeader} from '../../lib/auth';
+
 
 class PlacesNew extends React.Component {
   constructor(props) {
@@ -12,7 +14,7 @@ class PlacesNew extends React.Component {
   handleSubmit() {
     console.log('SUBMITTED');
     event.preventDefault();
-    axios.post('/api/places', this.state)
+    axios.post('/api/places', this.state, authorizationHeader())
       .then(() => this.props.history.push('/places'));
   }
 

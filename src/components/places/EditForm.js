@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import {authorizationHeader} from '../../lib/auth';
 
 class PlacesEdit extends React.Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class PlacesEdit extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     console.log('this is the state', this.state);
-    axios.put(`/api/places/${this.props.match.params.id}/edit`, this.state)
+    axios.put(`/api/places/${this.props.match.params.id}/edit`, this.state, authorizationHeader())
       .then((result) => this.props.history.push(`/places/${result.data._id}/`));
   }
 
