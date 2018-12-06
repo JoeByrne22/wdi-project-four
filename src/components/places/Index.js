@@ -6,11 +6,9 @@ class PlaceIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-
   }
 
-
-  getWonders() {
+  getPlaces() {
     axios.get('/api/places')
       .then(res => this.setState({ places: res.data }));
   }

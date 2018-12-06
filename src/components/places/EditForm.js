@@ -18,9 +18,11 @@ class PlacesEdit extends React.Component {
       });
   }
 
-  handleSubmit() {
-    axios.put(`/api/places/${this.state._id}/edit`, this.state)
-      .then(() => this.props.history.push(`/places/${this.state._id}`));
+  handleSubmit(e) {
+    e.preventDefault();
+    console.log('this is the state', this.state);
+    axios.put(`/api/places/${this.props.match.params.id}/edit`, this.state)
+      .then((result) => this.props.history.push(`/places/${result.data._id}/`));
   }
 
   handleChange({ target: { name, value }}) {

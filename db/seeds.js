@@ -11,6 +11,13 @@ const placeData = [
     openingHour: 9.00,
     closingHour: 20.00,
     postcode: 'SW11 1JB'
+  },
+  {
+    name: 'Northcote Library',
+    image: 'https://images.ecosia.org/vvEe_MxZCVUiPEtbtmTJ4hWCfUg=/0x390/smart/http%3A%2F%2Fbecandbalhamlabour.org%2Fwp-content%2Fuploads%2F2017%2F09%2FNorthcote-Library.jpg',
+    openingHour: 9.00,
+    closingHour: 19.00,
+    postcode: 'SW11 6HW'
   }
 
 ];
