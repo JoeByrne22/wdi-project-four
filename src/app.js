@@ -7,6 +7,9 @@ import New from './components/places/New';
 import Show from './components/places/Show';
 import Edit from './components/places/EditForm';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import Login from './components/auth/Login';
+import Register from './components/auth/Register';
+
 
 class App extends React.Component {
   render() {
@@ -20,6 +23,8 @@ class App extends React.Component {
             <Route exact path='/places/new' component={New} />
             <Route path='/places/:id/edit' component={Edit} />
             <Route path='/places/:id' component={Show} />
+            <Route exact path='/login' component={Login} />
+            <Route exact path='/register' component={Register} />
           </Switch>
         </section>
       </BrowserRouter>

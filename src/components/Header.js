@@ -13,6 +13,8 @@ class Header extends React.Component {
           <Link className="navbar-item" to="/places">INDEX</Link>
           <Link className="navbar-item" to="/">HOME</Link>
           <Link className="navbar-item" to="/places/new">Add a New Place</Link>
+          <button label="Orange"><Link to="/login">Login</Link></button>
+          <button label="Silver"><Link to="/register">Sign in</Link></button>
         </div>
       </nav>
     );
