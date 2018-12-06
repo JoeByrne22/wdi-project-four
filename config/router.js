@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const placesController = require('../controllers/placesController');
 const authController = require('../controllers/authController');
+const secureRoute = require('../lib/secureRoute');
 
 router.route('/places')
   .get(placesController.indexRoute);
@@ -9,13 +10,13 @@ router.route('/places/:id')
   .get(placesController.showRoute);
 
 router.route('/places')
-  .post(placesController.createRoute);
+  .post(secureRoute, placesController.createRoute);
 
 router.route('/places/:id')
-  .delete(placesController.deleteRoute);
+  .delete(secureRoute, placesController.deleteRoute);
 
 router.route('/places/:id/edit')
-  .put(placesController.updateRoute);
+  .put(secureRoute, placesController.updateRoute);
 
 router.route('/login')
   .post(authController.loginRoute);
