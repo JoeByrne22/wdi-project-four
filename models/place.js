@@ -1,12 +1,18 @@
 const mongoose = require('mongoose');
 
+const commentSchema = new mongoose.Schema({
+  text: String,
+  user: { type: mongoose.Schema.ObjectId, ref: 'User' },
+  rating: { type: Number, min: 1, max: 5 }
+});
+
 const placeSchema = mongoose.Schema({
   name: String,
   image: String,
   openingHour: Number,
   closingHour: Number,
-  postcode: String
+  postcode: String,
+  comments: [ commentSchema ]
 });
 
-const placeModel = mongoose.model('Place', placeSchema);
-module.exports = placeModel;
+module.exports = mongoose.model('Place', placeSchema);

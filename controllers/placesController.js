@@ -1,6 +1,5 @@
 const Place = require('../models/place');
 
-
 function indexRoute(req, res, next) {
   console.log('index route running');
   Place.find().then(places => res.json(places))
@@ -36,6 +35,7 @@ function updateRoute(req, res, next) {
     .then(place => res.json(place))
     .catch(next);
 }
+
 
 module.exports = {
   indexRoute: indexRoute,

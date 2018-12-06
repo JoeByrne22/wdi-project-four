@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const placesController = require('../controllers/placesController');
+const commentsController = require('../controllers/commentsController');
 const authController = require('../controllers/authController');
 const secureRoute = require('../lib/secureRoute');
 
@@ -23,5 +24,12 @@ router.route('/login')
 
 router.route('/register')
   .post(authController.registerRoute);
+
+router.route('/places/:id/comments')
+  .post(commentsController.commentCreateRoute);
+
+router.route('/places/:id/comments/:commentId')
+  .delete(commentsController.commentDeleteRoute);
+
 
 module.exports = router;
