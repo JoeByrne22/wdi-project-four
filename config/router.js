@@ -26,10 +26,10 @@ router.route('/register')
   .post(authController.registerRoute);
 
 router.route('/places/:id/comments')
-  .post(commentsController.commentCreateRoute);
+  .post(secureRoute, commentsController.commentCreateRoute);
 
 router.route('/places/:id/comments/:commentId')
-  .delete(commentsController.commentDeleteRoute);
+  .delete(secureRoute, commentsController.commentDeleteRoute);
 
 
 module.exports = router;

@@ -8,7 +8,9 @@ import CommentForm from './CommentForm';
 class PlaceShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      comment: {}
+    };
     this.handleDelete = this.handleDelete.bind(this);
     this.handleCommentChange = this.handleCommentChange.bind(this);
     this.handleCommentSubmit = this.handleCommentSubmit.bind(this);
@@ -66,15 +68,14 @@ render() {
         <p>Please wait...</p>}
       <button onClick={this.handleDelete}>DELETE</button>
       <Link to={`/places/${place._id}/edit`}className="button">Edit</Link>
-      <div className='column is-half'>
+      <div>
         <ul>
           {place.comments.map(comment =>
             <li key={comment._id}>
               <p className="title is-4">{comment.text}</p>
               <p className="subtitle is-5">{comment.user.username}</p>
-              <p>{'📖'.repeat(comment.rating)}</p>
               {decodeToken().sub === comment.user._id && <button
-                className="button is-danger"
+                className="button"
                 onClick={() => this.handleCommentDelete(comment)}
               >Delete</button>}
               <hr />

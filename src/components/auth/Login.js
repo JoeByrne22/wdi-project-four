@@ -14,6 +14,7 @@ class Login extends React.Component{
     event.preventDefault();
     axios.post('/api/login', this.state )
       .then(result => {
+        console.log('logged in! and result.data = ', result.data );
         saveToken(result.data.token);
         this.props.history.push('/places');
       });

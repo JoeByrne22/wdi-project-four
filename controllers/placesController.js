@@ -9,6 +9,7 @@ function indexRoute(req, res, next) {
 function showRoute(req, res, next) {
   console.log('showtime!');
   Place.findById(req.params.id)
+    .populate('comments.user')
     .then(place => res.json(place))
     .catch(next);
 }
