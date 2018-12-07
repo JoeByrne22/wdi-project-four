@@ -3,6 +3,7 @@ import axios from 'axios';
 import {authorizationHeader, isAuthenticated, decodeToken} from '../../lib/auth';
 import { Link } from 'react-router-dom';
 import CommentForm from './CommentForm';
+import PlaceMap from '../common/Map';
 
 
 class PlaceShow extends React.Component {
@@ -68,6 +69,9 @@ render() {
         <p>Please wait...</p>}
       <button onClick={this.handleDelete}>DELETE</button>
       <Link to={`/places/${place._id}/edit`}className="button">Edit</Link>
+      <div>
+        <PlaceMap places={[place]} userPosition={null} />
+      </div>
       <div>
         <ul>
           {place.comments.map(comment =>

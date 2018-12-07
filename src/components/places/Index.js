@@ -1,11 +1,23 @@
 import React from 'react';
 import axios from 'axios';
 import PlacesBox from './PlacesBox';
+import PlaceMap from '../common/Map';
 
 class PlaceIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      places: null,
+      userPosition: null
+    };
+    this.getLocation = this.getLocation.bind(this);
+    this.getPlaces = this.getPlaces.bind(this);
+  }
+
+  getLocation(pos) {
+    this.setState({ userPosition: [pos.coords.latitude, pos.coords.longitude]}, () => {
+      this.getPlaces();
+    });
   }
 
   getPlaces() {
@@ -14,6 +26,7 @@ class PlaceIndex extends React.Component {
   }
 
   componentDidMount() {
+    navigator.geolocation.getCurrentPosition(this.getLocation, this.getPlaces);
     axios.get('/api/places')
       .then(result => this.setState({ places: result.data }));
   }
@@ -28,8 +41,19 @@ class PlaceIndex extends React.Component {
             place => <PlacesBox key={place._id} place={place}/>
           )}
         </div>
+        <div className="box-container">
+          {!this.state.userPosition && !this.state.places
+            ?
+            <p>Loading map...</p>
+            :
+            <PlaceMap
+              userPosition={this.state.userPosition}
+              places={this.state.places} />
+          }
+        </div>
       </section>
     );
   }
 }
+
 export default PlaceIndex;
