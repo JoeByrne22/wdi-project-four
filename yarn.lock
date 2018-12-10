@@ -5169,7 +5169,7 @@ promise-inflight@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/promise-inflight/-/promise-inflight-1.0.1.tgz#98472870bf228132fcbdd868129bad12c3c029e3"
 
-prop-types@^15.6.1, prop-types@^15.6.2:
+prop-types@^15.5.0, prop-types@^15.6.1, prop-types@^15.6.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   dependencies:
@@ -5336,6 +5336,12 @@ react-dom@^16.3.2:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
     scheduler "^0.11.2"
+
+react-google-autocomplete@^1.0.18:
+  version "1.0.18"
+  resolved "https://registry.yarnpkg.com/react-google-autocomplete/-/react-google-autocomplete-1.0.18.tgz#db09194ab3f2d0eade141b88c67986e2b8ddb5cb"
+  dependencies:
+    prop-types "^15.5.0"
 
 react-is@^16.3.2, react-is@^16.6.1, react-is@^16.6.3:
   version "16.6.3"

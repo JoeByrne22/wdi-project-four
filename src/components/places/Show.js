@@ -58,10 +58,10 @@ render() {
   console.log('this is place', place);
   if(!place) return null;
   return (
-    <section>
+    <section className="columns">
       {place
         ?
-        <div className="columns is-5">
+        <div className="column is-3">
           <h1> {place.name}</h1>
           <img src={place.image} alt={place.name}/>
         </div>
@@ -69,7 +69,7 @@ render() {
         <p>Please wait...</p>}
       <button onClick={this.handleDelete}>DELETE</button>
       <Link to={`/places/${place._id}/edit`}className="button">Edit</Link>
-      <div>
+      <div className="column is-6">
         <PlaceMap places={[place]} userPosition={null} />
       </div>
       <div>

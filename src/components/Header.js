@@ -18,17 +18,20 @@ class Header extends React.Component {
   render() {
     return (
       <nav>
-        <div className="navbar-end">
-          <div className="navbar-brand">
-            <h2 className="title is-2">Quiet Place</h2>
+        <div className="navbar columns">
+          <div className="navbar-brand column is-0.5">
             {isAuthenticated() && <p>Welcome back! {decodeToken().username}</p>}
           </div>
-          <Link className="navbar-item" to="/places">INDEX</Link>
-          <Link className="navbar-item" to="/">HOME</Link>
-          <Link className="navbar-item" to="/places/new">Add a New Place</Link>
-          {isAuthenticated() && <a onClick={this.handleLogout} className="navbar-item">Log Out</a>}
-          <button><Link to="/login">Login</Link></button>
-          <button><Link to="/register">Register</Link></button>
+          <Link className="logo column is-3" to="/"><h2 className="title is-2">Quiet Place</h2></Link>
+          <Link className="browse column is-3" to="/places">Browse</Link>
+          <Link className="new column is-2" to="/places/new">Add a New  Qutie Place</Link>
+          <div className="registeration column is-2">
+            
+            {isAuthenticated() && <a onClick={this.handleLogout} ><button>Log Out</button></a>}
+
+            <button><Link to="/login">Login</Link></button>
+            <button><Link to="/register">Register</Link></button>
+          </div>
         </div>
       </nav>
     );
