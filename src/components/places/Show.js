@@ -54,7 +54,7 @@ handleCommentDelete = comment => {
 // turn edit into a link to edit component
 
 render() {
-  const { place } = this.state;
+  const { place, comment } = this.state;
   console.log('this is place', place);
   if(!place) return null;
   return (
@@ -62,7 +62,7 @@ render() {
       <div className="tile is-ancestor">
         <div className="tile is-4 is-vertical is-parent leftShowBoxs">
           <div className="tile is-child box">
-            <p className="title showTitle"><h1> {place.name}</h1></p>
+            <p className="title showTitle"><strong> {place.name}</strong></p>
             {place
               ?
               <div className="column">
@@ -70,6 +70,7 @@ render() {
                 <p> Opens at : {place.openingHour}:00</p>
                 <p> Closes at : {place.closingHour}:00</p>
                 <p> {place.postcode}</p>
+                <p>Rating:{comment.rating}</p>
                 <hr />
               </div>
               :
@@ -92,16 +93,14 @@ render() {
           <ul>
             {place.comments.map(comment =>
               <li key={comment._id}>
+                <p className="subtitle is-5">Reviewed by: {comment.user.username}</p>
                 <p className="title is-4">{comment.text}</p>
-                <p className="subtitle is-5">{comment.user.username}</p>
-                <hr />
-
-
+                <p>{'📖'.repeat(comment.rating)}</p>
                 {decodeToken().sub === comment.user._id && <button
                   className="button"
                   onClick={() => this.handleCommentDelete(comment)}
                 >Delete</button>}
-
+                <hr />
               </li>
             )}
           </ul>

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 const PlaceMap = ({ userPosition, places }) => {
   console.log('Map Page places is', places);
+  console.log('this is user P ', userPosition);
   return (
     <div id='map'>
       {places && <Map center={userPosition || places[0].location } zoom={14}>
@@ -11,7 +12,11 @@ const PlaceMap = ({ userPosition, places }) => {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
         />
-        
+        {userPosition && <Marker position={userPosition}>
+          <Popup>
+            You are Here
+          </Popup>
+        </Marker>}
         {places && places.map(place =>
           <Marker key={place._id} position={[place.location.lat, place.location.lng]}>
             <Popup>

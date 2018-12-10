@@ -19,4 +19,13 @@ const placeSchema = mongoose.Schema({
   comments: [ commentSchema ]
 });
 
+placeSchema.virtual('avgRating')
+  .get(function() {
+    return Math.round(this.comments.reduce((sum, comment) => {
+      return sum + comment.rating;
+    }, 0) / this.comments.length);
+  });
+
+placeSchema.set('toJSON', { virtuals: true });
+
 module.exports = mongoose.model('Place', placeSchema);
