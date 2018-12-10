@@ -58,43 +58,66 @@ render() {
   console.log('this is place', place);
   if(!place) return null;
   return (
-    <section className="columns">
-      {place
-        ?
-        <div className="column is-3">
-          <h1> {place.name}</h1>
-          <img src={place.image} alt={place.name}/>
+    <section className="showBoxes">
+      <div className="tile is-ancestor">
+        <div className="tile is-4 is-vertical is-parent leftShowBoxs">
+          <div className="tile is-child box">
+            <p className="title showTitle"><h1> {place.name}</h1></p>
+            {place
+              ?
+              <div className="column">
+
+                <p> Opens at : {place.openingHour}:00</p>
+                <p> Closes at : {place.closingHour}:00</p>
+                <p> {place.postcode}</p>
+                <hr />
+              </div>
+              :
+              <p>Please wait...</p>}
+            <button className="deleteInfo button" onClick={this.handleDelete}>DELETE</button>
+            <Link to={`/places/${place._id}/edit`} ><button className="editInfo button">EDIT</button></Link>
+          </div>
+          <div className="tile is-child box">
+            <img className="imageShow" src={place.image} alt={place.name}/>
+          </div>
         </div>
-        :
-        <p>Please wait...</p>}
-      <button onClick={this.handleDelete}>DELETE</button>
-      <Link to={`/places/${place._id}/edit`}className="button">Edit</Link>
-      <div className="column is-6">
-        <PlaceMap places={[place]} userPosition={null} />
+        <div className="tile is-parent mapShow">
+          <div className="tile is-child box">
+            <PlaceMap places={[place]} userPosition={null} />
+          </div>
+        </div>
       </div>
       <div>
-        <ul>
-          {place.comments.map(comment =>
-            <li key={comment._id}>
-              <p className="title is-4">{comment.text}</p>
-              <p className="subtitle is-5">{comment.user.username}</p>
-              {decodeToken().sub === comment.user._id && <button
-                className="button"
-                onClick={() => this.handleCommentDelete(comment)}
-              >Delete</button>}
-              <hr />
-            </li>
-          )}
-        </ul>
-        {isAuthenticated() && <CommentForm
-          handleChange={this.handleCommentChange}
-          handleSubmit={this.handleCommentSubmit}
-          comment={this.state.comment}
-        />}
+        <article className="commentShow">
+          <ul>
+            {place.comments.map(comment =>
+              <li key={comment._id}>
+                <p className="title is-4">{comment.text}</p>
+                <p className="subtitle is-5">{comment.user.username}</p>
+                <hr />
+
+
+                {decodeToken().sub === comment.user._id && <button
+                  className="button"
+                  onClick={() => this.handleCommentDelete(comment)}
+                >Delete</button>}
+
+              </li>
+            )}
+          </ul>
+        </article>
+        <div  className="commentShow">
+          {isAuthenticated() && <CommentForm
+            handleChange={this.handleCommentChange}
+            handleSubmit={this.handleCommentSubmit}
+            comment={this.state.comment}
+          />}
+        </div>
       </div>
     </section>
   );
 }
 }
+
 
 export default PlaceShow;

@@ -34,13 +34,14 @@ class PlacesEdit extends React.Component {
 
   render() {
     return (
-      <section>
+      <section className="editForm">
         <form onSubmit={this.handleSubmit}>
           <label>Whats the new name of your Quite Place?</label>
           <input onChange={this.handleChange}
             value={this.state.name || ''}
             name="name"
           />
+          
           <button>CHANGE</button>
         </form>
       </section>

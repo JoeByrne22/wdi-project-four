@@ -38,3 +38,56 @@ img {
   justify-content: space-around;
 
 }
+
+.deleteInfo {
+  background-color: #f8ab51;
+  height: 40px;
+  width: 80px;
+  margin-left: 40px;
+
+}
+
+ .editInfo {
+  height: 40px;
+  background-color: lightblue;
+  width: 80px;
+  margin-left: 10px;
+}
+
+.showTitle {
+  margin-left: 40px;
+}
+
+.leftShowBoxs {
+  margin-left: 20px;
+}
+
+.showBoxes {
+  margin-top: 30px;
+}
+
+.mapShow {
+  margin-right: 20px;
+}
+
+.imageShow {
+  margin-left: 55px;
+  height: 300px;
+}
+
+.commentShow {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.commentSubmit {
+  background-color: lightblue;
+  height: 30px;
+  width: 60px;
+  margin-bottom: 30px;
+}
+
+.editForm {
+  margin-top: 40px;
+  justify-content: center;
+}

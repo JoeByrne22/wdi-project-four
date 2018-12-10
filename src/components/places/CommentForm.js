@@ -8,7 +8,7 @@ function CommentForm ({ handleChange, handleSubmit, comment }) {
         <textarea className="textarea" id="text" name="text" placeholder="Comment"
           onChange={handleChange} value={comment.text || ''}/>
       </div>
-      <button>Submit</button>
+      <button className="button">Submit</button>
     </form>
   );
 }
