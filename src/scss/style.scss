@@ -92,11 +92,17 @@ img {
   justify-content: center;
 }
 
-.newForm {
+.newForm, .registerForm, .loginForm {
   margin-top: 30px;
   margin-left: 30%;
   margin-right: 30%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+      button:hover {
+        background-color: #54CCA1;
+      }
+      button {
+        margin-top:30px;
+      }
 }

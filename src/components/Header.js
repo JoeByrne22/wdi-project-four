@@ -19,9 +19,10 @@ class Header extends React.Component {
     return (
       <nav>
         <div className="navbar columns">
+          {isAuthenticated() &&
           <div className="navbar-brand column is-0.5">
-            {isAuthenticated() && <p>Welcome back! {decodeToken().username}</p>}
-          </div>
+            <p>Welcome back! {decodeToken().username}</p>
+          </div>}
           <Link className="logo column is-6" to="/places"><h2 className="title is-2">Quiet Place</h2></Link>
           {isAuthenticated() && <Link className="new column is-2" to="/places/new">Add a New  Qutie Place</Link>}
           <div className="registeration column is-2">

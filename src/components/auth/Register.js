@@ -25,7 +25,7 @@ class Register extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="registerForm" onSubmit={this.handleSubmit}>
         <label>Email</label>
         <input name="email" onChange={this.handleChange} value={this.state.email || ''}/>
         <label>Username</label>
