@@ -5,7 +5,7 @@ function commentCreateRoute(req, res, next) {
   console.log('user', req.body.user);
   Place
     .findById(req.params.id)
-    .populate('comments.username')
+    .populate('comments.user')
     .exec()
     .then(place => {
       place.comments.push(req.body);
@@ -18,7 +18,7 @@ function commentCreateRoute(req, res, next) {
 function commentDeleteRoute(req, res, next) {
   Place
     .findById(req.params.id)
-    .populate('comments.username')
+    .populate('comments.user')
     .then(place => {
       const comment = place.comments.id(req.params.commentId);
       console.log('place.comments.id(req.params.commentId', place.comments.id(req.params.commentId));

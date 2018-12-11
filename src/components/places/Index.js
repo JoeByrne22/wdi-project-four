@@ -20,8 +20,6 @@ class PlaceIndex extends React.Component {
   toggleMapMode() {
     const newMode = !this.state.mapMode;
     this.setState({ mapMode: newMode });
-
-
   }
 
   getLocation(pos) {
@@ -58,8 +56,8 @@ class PlaceIndex extends React.Component {
             place => <PlacesBox key={place._id} place={place}/>
           )}
         </div>}
-        {this.state.mapMode && <PlaceMap places={this.state.places} userPosition={this.state.userPosition} />}
-
+        {this.state.mapMode && <PlaceMap places={this.state.places}
+          userPosition={this.state.userPosition} />}
       </section>
     );
   }

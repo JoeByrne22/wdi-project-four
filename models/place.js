@@ -13,8 +13,8 @@ const placeSchema = mongoose.Schema({
   closingHour: Number,
   postcode: String,
   location: {
-    lat: { type: Number },
-    lng: { type: Number }
+    lat: { type: Number, required: true },
+    lng: { type: Number, required: true }
   },
   comments: [ commentSchema ]
 });

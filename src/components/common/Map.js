@@ -18,7 +18,9 @@ const PlaceMap = ({ userPosition, places }) => {
           </Popup>
         </Marker>}
         {places && places.map(place =>
-          <Marker key={place._id} position={[place.location.lat, place.location.lng]}>
+          <Marker
+            key={place._id}
+            position={[ place.location.lat, place.location.lng ]}>
             <Popup>
               <Link to={`/places/${place._id}`}>
                 {place.name}

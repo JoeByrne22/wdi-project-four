@@ -41,7 +41,18 @@ class PlacesEdit extends React.Component {
             value={this.state.name || ''}
             name="name"
           />
-          
+          <label>When does it open?</label>
+          <input onChange={this.handleChange}
+            value={this.state.openingHour || ''}
+            placeholer="Opening hour"
+            name="openingHour"
+          />
+          <label>When does it close?</label>
+          <input onChange={this.handleChange}
+            value={this.state.closingHour || ''}
+            placeholer="Closing hour"
+            name="closingHour"
+          />
           <button>CHANGE</button>
         </form>
       </section>

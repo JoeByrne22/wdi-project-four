@@ -22,11 +22,10 @@ class Header extends React.Component {
           <div className="navbar-brand column is-0.5">
             {isAuthenticated() && <p>Welcome back! {decodeToken().username}</p>}
           </div>
-          <Link className="logo column is-3" to="/"><h2 className="title is-2">Quiet Place</h2></Link>
-          <Link className="browse column is-3" to="/places">Browse</Link>
-          <Link className="new column is-2" to="/places/new">Add a New  Qutie Place</Link>
+          <Link className="logo column is-6" to="/places"><h2 className="title is-2">Quiet Place</h2></Link>
+          {isAuthenticated() && <Link className="new column is-2" to="/places/new">Add a New  Qutie Place</Link>}
           <div className="registeration column is-2">
-            
+
             {isAuthenticated() && <a onClick={this.handleLogout} ><button>Log Out</button></a>}
 
             <button><Link to="/login">Login</Link></button>

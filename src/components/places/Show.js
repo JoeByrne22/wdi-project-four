@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import {authorizationHeader, isAuthenticated, decodeToken} from '../../lib/auth';
+import {authorizationHeader, isAuthenticated, decodeToken } from '../../lib/auth';
 import { Link } from 'react-router-dom';
 import CommentForm from './CommentForm';
 import PlaceMap from '../common/Map';
@@ -96,10 +96,7 @@ render() {
                 <p className="subtitle is-5">Reviewed by: {comment.user.username}</p>
                 <p className="title is-4">{comment.text}</p>
                 <p>{'📖'.repeat(comment.rating)}</p>
-                {decodeToken().sub === comment.user._id && <button
-                  className="button"
-                  onClick={() => this.handleCommentDelete(comment)}
-                >Delete</button>}
+                {decodeToken().sub === comment.user._id && <button className="button" onClick={() => this.handleCommentDelete(comment)}>Delete</button>}
                 <hr />
               </li>
             )}
