@@ -1,3 +1,4 @@
+
 #map {
   height: 600px;
   width: 100%;
@@ -9,20 +10,33 @@
 }
 
 .navbar {
-  background-color:grey;
-  height: 60px;
+  background-image: url('https://st2.depositphotos.com/1498512/8571/v/950/depositphotos_85717246-stock-illustration-modern-sofa-with-huge-bookshelf.jpg');
+  height: 75px;
   text-align: center;
+  color: white;
  .logo {
-   background: red;
+   background: #838b8b;
+   color: white;
+   font-size: 40px;
+    :hover {
+      color: white;
+      text-shadow: 2px 2px black;
+    }
  }
  .browse {
-   background-color: blue;
+   background-color: #838b8b;
  }
  .new {
-   background-color: yellow;
+   background-color: #838b8b;
+   color: white;
+   font-size: 20px;
+    :hover {
+     color: white;
+     text-shadow: 2px 2px black;
+   }
  }
  .registeration {
-   background-color: green;
+   background-image: url('https://st2.depositphotos.com/1498512/8571/v/950/depositphotos_85717246-stock-illustration-modern-sofa-with-huge-bookshelf.jpg');
  }
 }
 
@@ -112,4 +126,22 @@ img {
   width: 100px;
   display: flex;
   justify-content: center;
+  border-radius: 15px;
+}
+
+.searchBar {
+  width: 91%;
+  height: 30px;
+  border-radius: 15px;
+}
+
+.searchBarButton {
+  height: 60px;
+  width: 60px;
+  border-radius: 15px;
+  margin-left: 10px;
+}
+
+.box-container {
+
 }

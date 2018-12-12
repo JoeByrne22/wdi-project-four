@@ -20,17 +20,17 @@ class Header extends React.Component {
       <nav>
         <div className="navbar columns">
           {isAuthenticated() &&
-          <div className="navbar-brand column is-0.5">
+          <div className="column is-0.5">
             <p>Welcome back! {decodeToken().username}</p>
           </div>}
-          <Link className="logo column is-6" to="/places"><h2 className="title is-2">Quiet Place</h2></Link>
+          <Link className="logo column is-6" to="/places"><h2>Quiet Place</h2></Link>
           {isAuthenticated() && <Link className="new column is-2" to="/places/new">Add a New Quiet Place</Link>}
           <div className="registeration column is-2">
 
             {isAuthenticated() && <a onClick={this.handleLogout} ><button>Log Out</button></a>}
 
-            <button><Link to="/login">Login</Link></button>
-            <button><Link to="/register">Register</Link></button>
+            {!isAuthenticated() && <button><Link to="/login">Login</Link></button>}
+            {!isAuthenticated() && <button><Link to="/register">Register</Link></button>}
           </div>
         </div>
       </nav>

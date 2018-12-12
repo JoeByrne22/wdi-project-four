@@ -58,17 +58,19 @@ class PlaceIndex extends React.Component {
       <section className="section">
         <h1 className="title">All the Quiet Places</h1>
         <hr />
-        {
-          (this.state.mapMode === true)
-            ?
-            <button className="toggleButton" onClick={this.toggleMapMode}>PLACES</button>
-            :
-            <button className="toggleButton" onClick={this.toggleMapMode}>MAP</button>
-        }
-        <form className="searchBar">
-          <input placeholder="search"/>
-          <button onClick={this.handleSearch}>Search</button>
-        </form>
+        <div className="columns">
+          {
+            (this.state.mapMode === true)
+              ?
+              <button className="toggleButton column is-2" onClick={this.toggleMapMode}>SWITCH TO: PLACES</button>
+              :
+              <button className="toggleButton column is-2" onClick={this.toggleMapMode}>SWITCH TO: MAP</button>
+          }
+          <form className=" column is-8">
+            <input className="searchBar" placeholder="search"/>
+            <button className="searchBarButton" onClick={this.handleSearch}>🔎</button>
+          </form>
+        </div>
         {!this.state.mapMode && <div className="box-container">
           {this.state.places && this.state.places.map(
             place => <PlacesBox key={place._id} place={place}/>
