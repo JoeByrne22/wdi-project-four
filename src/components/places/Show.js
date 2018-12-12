@@ -54,7 +54,7 @@ handleCommentDelete = comment => {
 // turn edit into a link to edit component
 
 render() {
-  const { place, comment } = this.state;
+  const { place } = this.state;
   console.log('this is place', place);
   if(!place) return null;
   return (

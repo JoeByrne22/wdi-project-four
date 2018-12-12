@@ -13,7 +13,7 @@ body {
 }
 
 .navbar {
-  background-image: url('https://st2.depositphotos.com/1498512/8571/v/950/depositphotos_85717246-stock-illustration-modern-sofa-with-huge-bookshelf.jpg');
+  background-image: url('https://images.ecosia.org/92HyiaN8IB1SX_RtPpp4jup4kco=/0x390/smart/http%3A%2F%2Fwww.exurbe.com%2Fwp-content%2Fuploads%2F2014%2F05%2Fancient-books.jpg');
   height: 75px;
   text-align: center;
   color: white;
@@ -39,7 +39,8 @@ body {
    }
  }
  .registeration {
-   background-image: url('https://st2.depositphotos.com/1498512/8571/v/950/depositphotos_85717246-stock-illustration-modern-sofa-with-huge-bookshelf.jpg');
+   vertical-align: middle;
+   background-image: url('https://images.ecosia.org/92HyiaN8IB1SX_RtPpp4jup4kco=/0x390/smart/http%3A%2F%2Fwww.exurbe.com%2Fwp-content%2Fuploads%2F2014%2F05%2Fancient-books.jpg');
  }
 }
 
@@ -148,4 +149,17 @@ img {
 
 .tile.is-child {
   background-color: #e0d9c6;
+}
+
+.indexInfo {
+  text-align: center;
+}
+
+.indexRating {
+  margin-bottom: 7px;
+}
+
+.homepageText {
+  text-align: center;
+  margin-top: 200px;
 }
