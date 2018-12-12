@@ -19,7 +19,7 @@ function CommentForm ({ handleChange, handleSubmit, comment }) {
           <option value="5">📖📖📖📖📖</option>
         </select>
       </div>
-      <button className="button">Submit</button>
+      <button className="button commentButton">Submit</button>
     </form>
   );
 }

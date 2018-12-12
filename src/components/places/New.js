@@ -16,8 +16,10 @@ class PlacesNew extends React.Component {
   handleSubmit() {
     console.log('SUBMITTED');
     event.preventDefault();
+    console.log('this.state', this.state);
     axios.post('/api/places', this.state, authorizationHeader())
-      .then(() => this.props.history.push('/places'));
+
+      .then(() => this.props.history.push('/places/'));
 
   }
 
@@ -38,44 +40,44 @@ class PlacesNew extends React.Component {
     return (
       <section>
         <form className="newForm" onSubmit={this.handleSubmit}>
-          <label>Whats the name of your Quite Place?</label>
+          <label className="newFormLabel">Whats the <strong>name</strong> of your Quite Place...</label>
           <input onChange={this.handleChange}
             value={this.state.name || ''}
             name="name"
             placeholder="Name"
           />
-          <label>Add image</label>
+          <label className="newFormLabel">Add <strong>image...</strong></label>
           <input onChange={this.handleChange}
             value={this.state.image || ''}
             name="image"
             placeholder="image URL"
           />
-          <label>When does it open?</label>
+          <label className="newFormLabel">When does it <strong>open</strong>...</label>
           <input onChange={this.handleChange}
             value={this.state.openingHour || ''}
             name="openingHour"
             placeholder="openingHour"
           />
-          <label>When does it close?</label>
+          <label className="newFormLabel">When does it <strong>close</strong>...</label>
           <input onChange={this.handleChange}
             value={this.state.closingHour || ''}
             name="closingHour"
             placeholder="closingHour"
           />
-          <label>Where is it?</label>
+          <label className="newFormLabel">Postcode...</label>
           <input onChange={this.handleChange}
             value={this.state.postcode || ''}
             name="postcode"
             placeholder="postcode"
           />
-          <label>Where is it?</label>
+          <label className="newFormLabel">Where is it...</label>
           <input onChange={this.handleChange}
             // className={errors.location.lat ? 'error' : ''}
             value={this.state.location.lat || ''}
             name="lat"
             placeholder="latitude"
           />
-          <label>Where is it?</label>
+          <label className="newFormLabel">Where is it...</label>
           <input onChange={this.handleChange}
             // className={errors.location.lng ? 'error' : ''}
             value={this.state.location.lng || ''}

@@ -36,23 +36,26 @@ class PlacesEdit extends React.Component {
     return (
       <section className="editForm">
         <form onSubmit={this.handleSubmit}>
-          <label>Whats the new name of your Quite Place?</label>
-          <input onChange={this.handleChange}
+          <label>Name?</label>
+          <input className="editInputBox" onChange={this.handleChange}
             value={this.state.name || ''}
             name="name"
           />
+          <hr />
           <label>When does it open?</label>
-          <input onChange={this.handleChange}
+          <input className="editInputBox" onChange={this.handleChange}
             value={this.state.openingHour || ''}
             placeholer="Opening hour"
             name="openingHour"
           />
+          <hr />
           <label>When does it close?</label>
-          <input onChange={this.handleChange}
+          <input className="editInputBox" onChange={this.handleChange}
             value={this.state.closingHour || ''}
             placeholer="Closing hour"
             name="closingHour"
           />
+          <hr />
           <button>CHANGE</button>
         </form>
       </section>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function PlacesBox({ place }) {
+  console.log('this is the place', place);
   return (
     <Link to={`/places/${place._id}`}>
       <article className="place-box">
