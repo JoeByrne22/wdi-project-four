@@ -131,6 +131,9 @@ img {
         margin-top: 4px;
       }
 }
+.editForm {
+  margin-top: 80px;
+}
 
 .toggleButton {
   height: 60px;
@@ -173,4 +176,12 @@ img {
 
 .commentButton {
   float: right;
+}
+
+.logOutButton, .loginButton, .registerButton {
+  margin-top: 12px;
+}
+
+.loginButton {
+  margin-right: px;
 }

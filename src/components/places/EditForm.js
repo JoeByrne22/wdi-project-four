@@ -56,7 +56,7 @@ class PlacesEdit extends React.Component {
             name="closingHour"
           />
           <hr />
-          <button>CHANGE</button>
+          <button className="button">CHANGE</button>
         </form>
       </section>
     );
