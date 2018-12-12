@@ -24,7 +24,7 @@ class Header extends React.Component {
             <p>Welcome back! {decodeToken().username}</p>
           </div>}
           <Link className="logo column is-6" to="/places"><h2 className="title is-2">Quiet Place</h2></Link>
-          {isAuthenticated() && <Link className="new column is-2" to="/places/new">Add a New  Qutie Place</Link>}
+          {isAuthenticated() && <Link className="new column is-2" to="/places/new">Add a New Quiet Place</Link>}
           <div className="registeration column is-2">
 
             {isAuthenticated() && <a onClick={this.handleLogout} ><button>Log Out</button></a>}

@@ -32,12 +32,26 @@ class PlaceIndex extends React.Component {
 
   getPlaces() {
     axios.get('/api/places')
-      .then(res => this.setState({ places: res.data }));
+      .then(res => this.setState({ places: res.data, filteredPlaces: res.data }));
   }
 
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(this.getLocation, this.getPlaces);
   }
+
+  handleSearch(event) {
+    event.preventDefault();
+    this.setState({ query: event.target.value });
+    console.log('search');
+    const query  = this.state.query;
+    let filteredPlaces = this.state.filteredPlaces;
+    const places =this.state.places;
+    filteredPlaces = places.filter(places =>
+      places.name.toLowerCase().includes(query.toLowerCase())
+    );
+    this.setState({ filteredPlaces: filteredPlaces });
+  }
+
 
   render() {
     return (
@@ -47,10 +61,14 @@ class PlaceIndex extends React.Component {
         {
           (this.state.mapMode === true)
             ?
-            <button onClick={this.toggleMapMode}>PLACES</button>
+            <button className="toggleButton" onClick={this.toggleMapMode}>PLACES</button>
             :
-            <button onClick={this.toggleMapMode}>MAP</button>
+            <button className="toggleButton" onClick={this.toggleMapMode}>MAP</button>
         }
+        <form className="searchBar">
+          <input placeholder="search"/>
+          <button onClick={this.handleSearch}>Search</button>
+        </form>
         {!this.state.mapMode && <div className="box-container">
           {this.state.places && this.state.places.map(
             place => <PlacesBox key={place._id} place={place}/>

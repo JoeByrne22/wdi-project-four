@@ -39,9 +39,11 @@ window.localStorage = (function(){
 function Map() {
   this.getCenter = function() {};
 }
+
 function Marker() {
   this.setMap = function() {};
 }
+
 function Autocomplete() {}
 global.google = {
   maps: {

@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { saveToken } from '../../lib/auth';
 
+
 class Login extends React.Component{
   constructor(props) {
     super(props);
@@ -12,11 +13,13 @@ class Login extends React.Component{
 
   handleSubmit(event) {
     event.preventDefault();
-    axios.post('/api/login', this.state )
-      .then(result => {
-        console.log('logged in! and result.data = ', result.data );
-        saveToken(result.data.token);
-        this.props.history.push('/places');
+    axios.post('/api/login', this.state)
+      .then(res => {
+        saveToken(res.data.token);
+      })
+      .then(() => this.props.history.push('/places'))
+      .catch(() => {
+        this.props.history.replace('/login');
       });
   }
 
