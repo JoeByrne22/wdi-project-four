@@ -33,7 +33,7 @@ const placeData = [
   }, {
     name: 'London Library',
     image: 'https://4.bp.blogspot.com/-zFSjjuw-I8o/Vz0uipOwp7I/AAAAAAAAx5s/6mIJwveILJEXlvhef_NcCjDpz7ofX-yvwCLcB/s1600/o.h.london.1%2B134%2B%25283%2529.JPG',
-    openingHour: 9.30,
+    openingHour: 9.00,
     closingHour: 20.00,
     postcode: 'SW1Y 4LG ',
     location: { lat: 51.50734, lng: -0.13701 },

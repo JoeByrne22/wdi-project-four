@@ -1,3 +1,6 @@
+body {
+  font-family: 'Inconsolata', serif;
+}
 
 #map {
   height: 600px;
@@ -85,8 +88,8 @@ img {
 }
 
 .imageShow {
-  margin-left: 55px;
-  height: 300px;
+  height: 100%;
+  width: 100%;
 }
 
 .commentShow {
@@ -127,6 +130,7 @@ img {
   display: flex;
   justify-content: center;
   border-radius: 15px;
+  margin-top: 12px;
 }
 
 .searchBar {
@@ -142,6 +146,6 @@ img {
   margin-left: 10px;
 }
 
-.box-container {
-
+.tile.is-child {
+  background-color: #e0d9c6;
 }

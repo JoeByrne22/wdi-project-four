@@ -70,7 +70,7 @@ render() {
                 <p> Opens at : {place.openingHour}:00</p>
                 <p> Closes at : {place.closingHour}:00</p>
                 <p> {place.postcode}</p>
-                <p>Rating:{comment.rating}</p>
+                <p>Rating: {place.avgRating}</p>
                 <hr />
               </div>
               :
