@@ -60,7 +60,7 @@ class PlaceIndex extends React.Component {
         <hr />
         <div className="columns">
           {
-            (this.state.mapMode === true)
+            (this.state.mapMode)
               ?
               <button className="toggleButton column is-2" onClick={this.toggleMapMode}>SWITCH TO: PLACES</button>
               :
