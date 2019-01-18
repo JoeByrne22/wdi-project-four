@@ -12,10 +12,10 @@ The app is deployed on Heroku.
 
 ## Wireframes
 
-![Index page: MAP](screenshot/Screen Shot 2019-01-05 at 16.02.03.png)
-![Index and New Page](screenshot/Screen Shot 2019-01-05 at 15.56.56.png)
+![Index page: MAP](screenshot/ScreenShot2019-01-05at16.02.03.png)
+![Index and New Page](screenshot/ScreenShot2019-01-05at15.56.56.png)
 
-![Login and Register form/ Showpage](screenshot/Screen Shot 2019-01-05 at 16.23.33.png)
+![Login and Register form/ Showpage](screenshot/ScreenShot2019-01-05at16.23.33.png)
 
 ## THE APP
 
@@ -23,22 +23,22 @@ The user is first shown a map, with markers . Each marker is a 'quite place' whi
 
 Once logged in, the user can also comment on each quite place. If the user adds a rating (1-5) the average of all ratings will be show on the index page.
 
-![home](screenshot/Screen Shot 2019-01-18 at 11.43.55.png)
+![home](screenshot/ScreenShot2019-01-18at11.43.55.png)
 
-![Homepage: IMAGES](screenshot/Screen Shot 2018-12-17 at 12.12.19.png)
+![Homepage: IMAGES](screenshot/ScreenShot2018-12-17at12.12.19.png)
 
-![Homepage: MAP](screenshot/Screen Shot 2019-01-05 at 16.16.04.png)
+![Homepage: MAP](screenshot/ScreenShot2019-01-05at16.16.04.png)
 
-![showpage](screenshot/Screen Shot 2019-01-18 at 11.58.40.png)
-![showpage2](screenshot/Screen Shot 2019-01-18 at 11.58.51.png)
+![showpage](screenshot/ScreenShot2019-01-18at11.58.40.png)
+![showpage2](screenshot/ScreenShot2019-01-18at11.58.51.png)
 
 ### Forms (login, register, add new)
 
-![add new](screenshot/Screen Shot 2019-01-18 at 11.47.26.png)
+![add new](screenshot/ScreenShot2019-01-18at11.47.26.png)
 
-![register](screenshot/Screen Shot 2019-01-18 at 11.47.59.png)
+![register](screenshot/ScreenShot2019-01-18at11.47.59.png)
 
-![login](screenshot/Screen Shot 2019-01-18 at 11.48.30.png)
+![login](screenshot/ScreenShot2019-01-18at11.48.30.png)
 
 ### Examples of Code / Challenges
 
@@ -54,9 +54,9 @@ this.state = {
 ```
 So whenever the page loads it will always show the map first. When the button is clicked it invoked the toggleMapMode, which changes mapMode to false and renders the photo index page.
 
-![map button](screenshot/Screen Shot 2019-01-18 at 11.49.07.png)
+![map button](screenshot/ScreenShot2019-01-18at11.49.07.png)
 
-![place button](screenshot/Screen Shot 2019-01-18 at 11.49.19.png)
+![place button](screenshot/ScreenShot2019-01-18at11.49.19.png)
 
 ```
 toggleMapMode() {
@@ -108,11 +108,11 @@ ratings. So within the CommentForm, I added a select tags with option tags its c
 
 The ratings are in the same form as the comments, so when a user comments, they can add a ratings as well.
 
-![ratings](screenshot/Screen Shot 2019-01-18 at 11.57.50.png)
+![ratings](screenshot/ScreenShot2019-01-18at11.57.50.png)
 
 #### Known Bugs 🐛 and Wins
 
-The search bar doesn't work, it has no function. 
+The search bar doesn't work, it has no function.
 
 Overall the app is pretty smooth and I felt that I managed my time very well during this project. reaching MVP pretty quickly and then was able to try new thing. My main win was the map.
 
